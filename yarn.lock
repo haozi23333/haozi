@@ -1540,6 +1540,22 @@ list-item@^1.1.1:
     is-number "^2.1.0"
     repeat-string "^1.5.2"
 
+live2d-widget-model-chitose@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/live2d-widget-model-chitose/-/live2d-widget-model-chitose-1.0.5.tgz#e6aed2d6343e50f316b97967394889583bd407c3"
+
+live2d-widget-model-miku@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/live2d-widget-model-miku/-/live2d-widget-model-miku-1.0.5.tgz#49a0b7b4bbc371e36b75cf62d745933e7bcf108b"
+
+live2d-widget-model-nico@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/live2d-widget-model-nico/-/live2d-widget-model-nico-1.0.5.tgz#a4acbe3d9b2b8aa9f9c12a077606b0d27cfdbe20"
+
+live2d-widget-model-wanko@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/live2d-widget-model-wanko/-/live2d-widget-model-wanko-1.0.5.tgz#2833486bc76528ce37e7e04fdbbe623191e03953"
+
 live2d-widget@^3.0.5:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/live2d-widget/-/live2d-widget-3.0.5.tgz#b6df1d996404adcf31b031a27376f4c223a0db18"

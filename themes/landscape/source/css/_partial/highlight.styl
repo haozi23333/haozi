@@ -12,6 +12,11 @@ highlight-aqua = #66cccc
 highlight-blue = #6699cc
 highlight-purple = #cc99cc
 
+@font-face
+  font-family:'Fira Code'
+  src: url('./fonts/FiraCode-Light.ttf')
+
+
 $code-block
   background: highlight-background
   margin: 0 article-padding * -1
@@ -29,7 +34,7 @@ $line-numbers
 
 .article-entry
   pre, code
-    font-family: font-mono
+    font-family: "Fira Code"
   code
     background: color-background
     text-shadow: 0 1px #fff
@@ -77,7 +82,7 @@ $line-numbers
     padding: 15px article-padding 15px 0
     .gist-file
       border: none
-      font-family: font-mono
+      font-family: "Fira Code"
       margin: 0
       .gist-data
         background: none

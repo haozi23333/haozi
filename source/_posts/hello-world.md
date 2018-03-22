@@ -1,38 +1,11 @@
 ---
-title: Hello World
+title: 又是一篇 Hello world
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+> 再熬夜我是狗
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+已经记不清楚这是第几次写 hello world 了，最早的 ghost 的博客， 到上一个自己开发的博客，已经过去了半年了。基本没有产出什么有意义的东西。写的东西也因为忘记导出数据库备份丢失了...  总之理由蛮多的。   
+<div>
+从现在开始，再给自己一次改过自新的机会，最近遇到的东西蛮多的，认识了很多人，长了很多的见识，也交了很多的学费。我也想把很多东西都记录下来。最近最多关注的就是 币圈 的事情以及最近兼职的关于接入 apple stroe 和 google Play 的事情，虽然也算不得什么大事情，记录下来总归是个好事情。方便后其他人快速掌握。   
+<div>
+更新看心情吧也不指望给自己定一些什么目标了。。。  

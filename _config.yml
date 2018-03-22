@@ -8,8 +8,8 @@ subtitle: 夏基霸涉猎
 description: 一个什么都在学的新手萌二程序员的日常~
 keywords: 萌二
 author: John Doe
-language: cn
-timezone: UTC+8
+language: zh-CN
+timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -87,16 +87,13 @@ sitemap:
     tag: true
     category: false
 
-# hexo-global-license
-licenseType: by-sa
-licenseIconSize: normal
-
 # hexo-helper-live2d
+#live2d-widget-model-nico
 live2d:
   enable: true
   scriptFrom: local
   model:
-    use: live2d-widget-model-wanko
+    use: http://127.0.0.1:4000/live2d/models/chitose/model.json
   display:
     position: right
     width: 150
