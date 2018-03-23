@@ -33,8 +33,8 @@ comment: gitment
 # gitment config
 gitment_owner: haozi23333
 gitment_repo: haozi23333.github.io
-gitment_oauth_id: 0f87e490e00ee3fd87ef
-gitment_oauth_secret: 4a9d2b148e7971c2201ad12131ce8bf8159ccd2e
+gitment_oauth_id: 20421b02a1526d225183
+gitment_oauth_secret: 375652780feb5a3ae8c0b8326d52b96517f33c9f
 
 # uyan
 # if you want to use uyan as your blog comment, plz remove/comment out gitment config
