@@ -93,7 +93,7 @@ live2d:
   enable: true
   scriptFrom: local
   model:
-    use: http://127.0.0.1:4000/live2d/models/chitose/model.json
+    use: /live2d/models/chitose/model.json
   display:
     position: right
     width: 150
