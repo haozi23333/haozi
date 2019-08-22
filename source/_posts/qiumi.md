@@ -4,6 +4,7 @@ date: 2018-03-27 22:32:51
 tags:
 ---
 
-{% asset_img qiumi.jpg This is an example image %}
+{% asset_img qiumi.jpg 这是一张卖萌的图片 %}
 
-秋咪~
+啾咪~
+
