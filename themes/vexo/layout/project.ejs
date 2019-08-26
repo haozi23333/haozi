@@ -9,7 +9,7 @@
   (function() {
     var url = '<%= config.url %>/<%= page.path %>';
     $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header')
+    $('header.header').removeClass('fixed-header')
     $.ajax({
       headers: {
         Accept: 'application/vnd.github.v3.raw'
@@ -26,7 +26,7 @@
             description = description.slice(0, 72) + '...'
           }
           return (
-            '<section class="project-card">' + 
+            '<section class="project-card">' +
               '<a class="card-wrap" href="'+ item.html_url +'" target="_blank">' +
                 '<div class="card-header" data-name="'+ item.name +'"></div>' +
                 '<h3 class="card-title">' + item.name + '</h3>' +

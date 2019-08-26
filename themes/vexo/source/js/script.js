@@ -1,7 +1,7 @@
 (function ($) {
   console.log('© Theme-Vexo | https://github.com/yanm1ng/hexo-theme-vexo')
   var app = $('.app-body')
-  var header = $('.header')
+  var header = $('header.header')
   var banner = document.getElementById('article-banner') || false
   var about = document.getElementById('about-banner') || false
   var top = $('.scroll-top')
@@ -146,3 +146,13 @@ $("html").click(function(e){
     $i.remove();
   });
 });
+
+// 如果使用了 more 指令, 在主页的时候不加载每篇文章下面的 标题
+if (document.location.pathname === '/') {
+  [].map.call(document.querySelectorAll('article h1'), el => el.remove())
+}
+
+
+$(document).ready(() => {
+  $('tr.header').removeClass('header')
+})
