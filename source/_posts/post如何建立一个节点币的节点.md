@@ -22,30 +22,30 @@ tags:
 
 ssh 到你的服务器
 运行以下命令， 创建并启用虚拟内存(交换分区)
-```bash
+```sh
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile  
 ```
 使用root权限编辑 `/etc/fstab` 文件，添加以下命令， 使其开机自动挂载
-```bash
+```sh
 /swapfile none swap defaults 0 0
 ```
 
 ## 添加节点配置
 回到你的GUI钱包, 选择工具(Tools)选项 -> 调试(Debug console) 切换到 Console 选项卡， 输入下面的命令 回车
-```bash 
+```sh 
 getnewaddress  <节点名字>
 ```
 可以获得一个类似于 `ZorZXzwaJXizWiGLRWVYwdcPV1qj4Z757u` 的地址， 你需要向这个地址发送大于担保值的币，多一点点就好了。不用担心币不见了，因为这个地址是你自己的，等待一定的确认次数币到账
 继续在 Console 界面输入下面的命令， 回车
-```bash
+```sh
 masternode genkey
 ```
 你可以拿到一个类似 `5rRvBWi5jRgLk9ef2nhomN9pqXsZC5kUEW4rJ5Bp8RHKZojc5mq` 这样的地址， 你需要把这个记录下来标记为 节点key
 继续在 Console 界面 输入
-```bash
+```sh
 masternode outputs
 ```
 得到一个类似的输出
@@ -57,11 +57,11 @@ masternode outputs
 将里面的 `5ed1b5d8cf927ab6db888b41977ac6139dc26eb3e6d1d6afec4306bb85055ff5` 复制出来 标记为 节点输出
 关闭窗口， 选择钱包的 工具(Tools)选项 -> 打开节点配置文件(Open MasterNode Configuration File)
 在弹出的编辑器中输入， 会用到上面记录的 节点key 和节点 输出
-```bash
+```sh
 <节点名字> <节点ip>:<节点端口> <节点key> <节点输出> <节点序号>
 ```
 例如上面的就是
-```bash
+```sh
 NM1 0.0.0.0:36655 5rRvBWi5jRgLk9ef2nhomN9pqXsZC5kUEW4rJ5Bp8RHKZojc5mq 5ed1b5d8cf927ab6db888b41977ac6139dc26eb3e6d1d6afec4306bb85055ff5 0
 ```
 节点ip就是您vps的ip， 端口可以随便设置一个
@@ -69,7 +69,7 @@ NM1 0.0.0.0:36655 5rRvBWi5jRgLk9ef2nhomN9pqXsZC5kUEW4rJ5Bp8RHKZojc5mq 5ed1b5d8cf
 ## Linux 启动 Master Node
 ssh 到您的服务器
 更新软件包列表
-```bash
+```sh
 sudo apt-get update
 ```
 
@@ -78,7 +78,7 @@ sudo apt-get update
 
 创建服务器节点配置文件
 创建一个叫做`masternode.conf`的文件 输入以下
-```bash
+```sh
 listen=1 
 server=1 
 daemon=1 
@@ -92,15 +92,15 @@ rpcpassword=<一个稍微复杂的密码>
 ```
 开放服务器的端口, 让其他节点可以连接到我们
 运行命令
-```bash
+```sh
 sudo ufw allow <你上面选的端口号>/tcp
 ```
 解压您的linux钱包， 找到上面说的文件，运行
-```bash
+```sh
 ./<守护进程名> --conf=<配置文件>
 ```
 例如
-```bash
+```sh
 ./corezd --conf=/home/ubuntu/masternode.conf
 ```
 你将会看到一条 `corez server starting` 的消息

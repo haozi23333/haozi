@@ -154,7 +154,9 @@ if (document.location.pathname === '/') {
 
 
 $(document).ready(() => {
-  $('tr.header').removeClass('header')
+  $('tr.header').removeClass('header');
+  console.log($('#ghcard-*'))
+  $('#ghcard-*').css('margin-top', '1rem');
 });
 
 
@@ -175,30 +177,37 @@ $(document).ready(() => {
 
   // 判断一下 ace 是否已经加载完成, 没有就再加载
   if (!window['ace']) {
+    // 预加载2个JS文件
     await get_script(base_url + 'ace.js');
     await get_script(base_url + 'ext-static_highlight.js');
   }
 
   console.log('Ace.js 加载完成');
 
+  // 这里设置ace加载解析器的基础地址, 自己部署的话设置为自己ace.js组件的地址, 这里使用的是CDN的
   ace.config.set('basePath', base_url);
   const highlight = ace.require("ace/ext/static_highlight");
-  const dom = ace.require("ace/lib/dom");
 
+  // 搜索 pre code 解构的块, 进行着色
   [].map.call(document.querySelectorAll('pre code'), ((el) => {
+    // 如果已经被设置了ace-mode的话, 这个块已经是被高亮过了, 就不重复了
     if (el.getAttribute( 'ace-mode'))
       return;
+    // 拆分class
     const p = el.className.split(' ').map(v => v.replace(/ /g,''));
-    el.setAttribute('ace-mode', 'ace/mode/' + (p[1] || "plain_text"));
-    el.setAttribute('ace-theme', 'ace/theme/' + (p[2] || "chrome"));
+    console.log(p)
+    // 这里是设置着色的语言
+    el.setAttribute('ace-mode', 'ace/mode/' + (p[0] || "plain_text"));
+    // 这里可以修改主题颜色
+    el.setAttribute('ace-theme', 'ace/theme/solarized_light');
     el.setAttribute('gutter',  p[3] || true);
-    highlight(el, {
+   highlight(el, {
       mode: el.getAttribute("ace-mode"),
       theme: el.getAttribute("ace-theme"),
       startLineNumber: 1,
       trim: true,
-      showGutter: el.getAttribute("gutter")
+      showGutter: el.getAttribute("gutter"),
+      fontFamily: "Fira Code",
     });
   }));
-
 })();

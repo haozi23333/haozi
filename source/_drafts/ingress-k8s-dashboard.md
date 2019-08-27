@@ -1,20 +1,20 @@
 ---
-title: k8s_dashboard
+title: ingress-k8s-dashboard
 date: 2019-08-27 10:32:51
 tags:
 ---
 
-# kubernetes Dashboard
+# ingress-k8s-dashboard
 
 安装 k8s 的官方控制台, 执行
 
-```shell
+```sh
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
 ```
 
 完成之后执行 `kubectl get pods --namespace kubernetes-dashboard` 查看 dashboard 运行状态
 
-```shell
+```sh
 [root@localhost ~]# kubectl get pods --namespace kubernetes-dashboard
 NAME                                          READY   STATUS    RESTARTS   AGE
 kubernetes-dashboard-5c8f9556c4-z5xm2         1/1     Running   0          97s
@@ -35,7 +35,7 @@ kubectl proxy
 kubectl -n kubernetes-dashboard get svc
 ```
 
-```shell
+```sh
 [root@localhost ~]# kubectl -n kubernetes-dashboard get svc
 NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
 dashboard-metrics-scraper   ClusterIP   10.102.149.239   <none>        8000/TCP   8m20s
@@ -46,7 +46,7 @@ kubernetes-dashboard        ClusterIP   10.98.227.207    <none>        443/TCP  
 kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard
 ```
 
-```yml
+```yaml
 # Please edit the object below. Lines beginning with a '#' will be ignored,
 # and an empty file will abort the edit. If an error occurs while saving this file will be
 # reopened with the relevant failures.
