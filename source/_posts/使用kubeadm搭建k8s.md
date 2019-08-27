@@ -126,7 +126,7 @@ date: 2019-08-26 10:32:51
 </g>
 </svg>
 <span style="line-height: 100px;text-align: center;font-size: 80px;color: #326DE6;"> & </span>
-<img src="/2019/08/26/使用kubeadm搭建 k8s/kubeadm-logo.png" style="margin-left: 30px !important;margin-top: 10px !important;height:80px" >
+<img src="/2019/08/26/使用kubeadm搭建k8s/kubeadm-logo.png" style="margin-left: 30px !important;margin-top: 10px !important;height:80px" >
 </div> 
 
 <!-- more -->
