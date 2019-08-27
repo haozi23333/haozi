@@ -12,10 +12,12 @@
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-seo-friendly-sitemap": "0.0.25",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-github-card": "^1.0.3",
     "hexo-global-license": "^0.5.2",
     "hexo-helper-live2d": "^3.0.1-beta.0",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-pandoc": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "hexo-toc": "^1.1.0"

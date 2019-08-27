@@ -155,4 +155,50 @@ if (document.location.pathname === '/') {
 
 $(document).ready(() => {
   $('tr.header').removeClass('header')
-})
+});
+
+
+(async () => {
+
+  if(document.getElementsByTagName('pre').length === 0) {
+    console.log('Ace.js 未加载 -> 没有找到代码段');
+    return;
+  }
+
+  const base_url = '//cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/';
+
+  const get_script = function (url) {
+    return new Promise((s, j) => {
+        $.getScript(url, s, j );
+    })
+  };
+
+  // 判断一下 ace 是否已经加载完成, 没有就再加载
+  if (!window['ace']) {
+    await get_script(base_url + 'ace.js');
+    await get_script(base_url + 'ext-static_highlight.js');
+  }
+
+  console.log('Ace.js 加载完成');
+
+  ace.config.set('basePath', base_url);
+  const highlight = ace.require("ace/ext/static_highlight");
+  const dom = ace.require("ace/lib/dom");
+
+  [].map.call(document.querySelectorAll('pre code'), ((el) => {
+    if (el.getAttribute( 'ace-mode'))
+      return;
+    const p = el.className.split(' ').map(v => v.replace(/ /g,''));
+    el.setAttribute('ace-mode', 'ace/mode/' + (p[1] || "plain_text"));
+    el.setAttribute('ace-theme', 'ace/theme/' + (p[2] || "chrome"));
+    el.setAttribute('gutter',  p[3] || true);
+    highlight(el, {
+      mode: el.getAttribute("ace-mode"),
+      theme: el.getAttribute("ace-theme"),
+      startLineNumber: 1,
+      trim: true,
+      showGutter: el.getAttribute("gutter")
+    });
+  }));
+
+})();
