@@ -9,7 +9,7 @@ date: 2019-08-27 10:32:51
 
 # 安装 k8s-dashboard
 
-这里是手动部署的过程~, 没有 `ingress`, 如果需要走 `ingress`参见 [CertBoot](///)
+这里是手动部署的过程~
 
 
 

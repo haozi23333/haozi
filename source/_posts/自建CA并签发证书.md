@@ -8,13 +8,11 @@ tags:
 
 # 自建CA并签发证书
 
-为了家里内网服务部署的方便使用了统一的域名 `haozi.local` , 这是一个本地域名, 没法通过常规的方式申请有效的https证书, 所以需要在内网搭建一个专门的CA,用于签发这个域名的证书等
+为了家里内网服务部署的方便使用了统一的域名 `haozi.local` , 这是一个本地域名, 没法通过常规的方式申请有效的https证书, 所以需要在内网搭建一个专门的CA,用于签发这个域名的证书等, 后面我们将搭建一个 `letsencrypt`的服务端, 自动签发
 
 
 
 <!--more-->
-
-
 
 ## 自建CA颁发机构
 
@@ -58,6 +56,30 @@ openssl req -new -key ~/ca/k8s-dashboard.haozi.local/key.pem -out ~/ca/k8s-dashb
 
 复制一份 `openssl.conf` 到自己的文件夹, 修改一下的配置
 
+这部分是 CA 证书的配置
+
+```toml
+[ CA_default ]
+
+dir		= /Users/haozi/ca		# Where everything is kept  
+certs		= $dir/certs		# Where the issued certs are kept
+crl_dir		= $dir/crl		# Where the issued crl are kept
+database	= $dir/index.txt	# database index file.
+#unique_subject	= no			# Set to 'no' to allow creation of
+					# several ctificates with same subject.
+new_certs_dir	= $dir/newcerts		# default place for new certs.
+
+certificate	= $dir/ca.cert.pem 	# The CA certificate ca证书的地址
+serial		= $dir/serial 		# The current serial number 生成的序号
+crlnumber	= $dir/crlnumber	# the current crl number		
+					# must be commented out to leave a V1 CRL
+crl		= $dir/crl.pem 		# The current CRL
+private_key	= $dir/ca.key.pem  # The private key ca证书私钥的地址
+RANDFILE	= $dir/private/.rand	# private random number file
+```
+
+这部分是要签名的证书的配置
+
 ```toml
 [ req ]
 prompt             = no
@@ -81,6 +103,17 @@ subjectAltName      = @alternate_names
 [ alternate_names ]
 DNS.1        = k8s-dashboard.haozi.local  #这里是要签发域名
 ```
+
+按照上面的配置创建以下文件和文件夹
+
+```sh
+mkdir newcerts
+touch index.txt
+touch index.txt.attr
+echo 01 > serial
+```
+
+
 
 `-config`处填写为自己上面的 openssl.conf 的位置
 
