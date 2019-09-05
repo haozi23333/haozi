@@ -42,7 +42,7 @@ gitment_oauth_secret: 375652780feb5a3ae8c0b8326d52b96517f33c9f
 baidu_id: 
 
 about: 
-  banner: http://file.muyutech.com/about.jpg
+  banner: https://file.muyutech.com/about.jpg
   avatar: https://avatars3.githubusercontent.com/u/16443628?v=3&s=460
   description: "The end is always near."
 #  weibo_username: yanm1ng
