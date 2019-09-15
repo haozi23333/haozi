@@ -201,7 +201,7 @@ $(document).ready(() => {
     // 这里可以修改主题颜色
     el.setAttribute('ace-theme', 'ace/theme/solarized_light');
     el.setAttribute('gutter',  p[3] || true);
-   highlight(el, {
+    highlight(el, {
       mode: el.getAttribute("ace-mode"),
       theme: el.getAttribute("ace-theme"),
       startLineNumber: 1,
@@ -225,4 +225,3 @@ $(document).ready(() => {
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
 })();
-
