@@ -171,7 +171,7 @@ $(document).ready(() => {
 
   const get_script = function (url) {
     return new Promise((s, j) => {
-        $.getScript(url, s, j );
+      $.getScript(url, s, j );
     })
   };
 
@@ -225,3 +225,19 @@ $(document).ready(() => {
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
 })();
+
+
+// 显示是多天之前发布的信息
+(function () {
+  if ($('.post-date').length === 1) {
+    const [y, m, d] = $('.post-date').text().split('-');
+    const day = (new Date()-new Date([m, d, y].join('-'))) / (3600 * 24 * 1000);
+    if (day > 1) {
+      if ($('.markdown-content > :eq(0)')[0].tagName !== 'H1') {
+        $(`.markdown-content > :eq(0)`).before(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
+      } else {
+        $(`.markdown-content > :eq(0)`).after(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
+      }
+    }
+  }
+})()
