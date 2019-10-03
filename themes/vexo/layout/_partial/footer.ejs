@@ -5,7 +5,12 @@
     Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
   </p>
 </footer>
-
+<script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({theme: 'forest'});
+  }
+</script>
 <script>
   function async(u, c) {
     var d = document, t = 'script',
