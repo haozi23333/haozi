@@ -230,6 +230,9 @@ $(document).ready(() => {
 
 // 显示是多天之前发布的信息
 (function () {
+  // 删除多余的 H1 标签
+  $('.article-card .article-summary h1').remove()
+
   if ($('.post-date').length === 1) {
     const [y, m, d] = $('.post-date').text().split('-');
     const day = (new Date()-new Date([m, d, y].join('-'))) / (3600 * 24 * 1000);
