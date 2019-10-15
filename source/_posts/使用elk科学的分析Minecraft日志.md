@@ -1,5 +1,5 @@
 ---
-title: 使用elk科学的分析Minecraft日志
+title: 使用elk科学的分析Minecraft日志[1]
 date: 2019-10-11 12:37:43
 tags:
 	- es
@@ -221,7 +221,22 @@ output{
 
 效果还是蛮不错的
 
+比如搜索一下`因为反作弊mod`被踢出游戏的玩家, 设置`reason.keyword` = `请勿自行安装mod`
 
+```json
+{
+  "query": {
+    "match": {
+      "reason.keyword": {
+        "query": "请勿自行安装mod\r",
+        "type": "phrase"
+      }
+    }
+  }
+}
+```
+
+{% asset_img ban.png 反作弊踢掉的用户 %}
 
 ## 注意
 

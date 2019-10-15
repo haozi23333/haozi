@@ -22,13 +22,13 @@ tags:
 
 在上一篇文章中, logstash 配置里面解析了`lag / gc`, 和 `um tps` 这俩命令返回数据
 
-{% asset_img cmd_res.png dashboard %}
+{% asset_img cmd_res.png 服务器控制台 %}
 
 分析这个就可以绘制出, 每个世界当前的 TPS, tick时间, 实体数量, tiles数量和chunk数量
 
-{% asset_img 1.png dashboard %}
+{% asset_img 1.png 世界统计%}
 
-{% asset_img server_info.png dashboard %}
+{% asset_img server_info.png 服务器信息%}
 
 以及每个世界各个指标的趋势
 
@@ -40,25 +40,25 @@ tags:
 
 最基本的统计就是错误日志的统计
 
-{% asset_img log_level.png dashboard %}
+{% asset_img log_level.png 日志类型错误统计 %}
 
 清理地图垃圾的插件信息(这个应该和tps放在一起分析, 但是这个20分钟才有一次数据 ==)
 
-{% asset_img 3.png dashboard %}
+{% asset_img 3.png 扫地大妈扫地数据%}
 
 玩家被踢出服务器理由的统计
 
-{% asset_img 5.png dashboard %}
+{% asset_img 5.png 玩家被提出服务器理由%}
 
 ## 玩家数据
 
 这里对 `chat`字段使用了 `IK分词`, 制作了根据玩家发言情况制作了 `cloud tag`
 
-{% asset_img 6.png dashboard %}
+{% asset_img 6.png 玩家聊天 cloud tag%}
 
 对热点命令进行一个统计
 
-{% asset_img 4.png dashboard %}
+{% asset_img 4.png 热点命令统计 %}
 
 
 
