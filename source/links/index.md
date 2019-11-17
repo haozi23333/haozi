@@ -1,6 +1,6 @@
 ---
 title: About
-layout: about
+layout: links
 ---
 
 # 这里莫得任何东西
