@@ -6,7 +6,7 @@
 </div>
 
 <main class="app-body project-app">
-    <div class="markdown-content">
+    <div class="markdown-content card-container" style="display: block">
         <blockquote style="border-left: 3px solid #c2bbe4">
            联系方式
         </blockquote>
@@ -16,7 +16,7 @@
             <span style="display: block; margin-top: .5rem">Github:   <a href="https://github.com/haozi23333" target="_blank">@haozi23333</a><br></span>
         </blockquote>
     </div>
-    <div id="comments"></div>
+    <div id="comments" class="card-container" style="display: none"></div>
 </main>
 
 <script>
@@ -38,8 +38,11 @@
 
 
         $(document).ready(() => {
-            const ul = document.getElementById("friends"),
-                lis = Array.prototype.slice.call(ul.childNodes, 0);
+            const ul = document.getElementById("friends");
+            if (!ul) {
+                return
+            }
+            const lis = Array.prototype.slice.call(ul.childNodes, 0);
             let i = lis.length;
             while(i-- > 0)ul.insertBefore(lis[i], lis[parseInt(Math.random() * lis.length)])
         })
