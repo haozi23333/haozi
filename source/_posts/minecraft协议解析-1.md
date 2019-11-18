@@ -219,7 +219,7 @@ MinecraftServer ->> MinecraftClient: 启用压缩(可选)
 MinecraftServer ->> MinecraftClient: 登录成功
 ```
 
-> 如果不是正版登录, 就有用AccessToken的步骤
+> 如果不是正版登录, 就不需要AccessToken的步骤
 
 ## 参考资料
 
