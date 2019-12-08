@@ -14,13 +14,13 @@ tags:
 TERM environment variable needs set
 ```
 
-经过搜素添加一个 ``TERM=xterm`` 或者 `ERM=linux`环境变量即可, 但是还是会出现
+经过各种搜素发现可以添加一个 ``TERM=xterm`` 或者 `ERM=linux`环境变量即可, 但是还是会出现
 
 ```sh
 Your terminal lacks the ability to clear the screen or position the cursor.
 ```
 
-我分享一下我的解决办法, 首先在 host(宿主机)上面执行 `echo $TERM`
+的一个问题, 我分享一下我的解决办法, 首先在 host(宿主机)上面执行 `echo $TERM`
 
 ```
 [root@localhost d]# echo $TERM
