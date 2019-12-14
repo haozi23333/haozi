@@ -2,8 +2,8 @@ const http = require('http')
 const exec = require('child_process').exec
 const axios = require('axios')
 
-const bot_token = 'bot_token'
-const chat_id = 'chat_id'
+const bot_token = process.env.HAOZI_BOT_TOKEN
+const chat_id = process.env.HAOZI_CHANNEL_ID
 
 http.createServer(function (req, res) {
         // 该路径与WebHooks中的路径部分需要完全匹配，实现简易的授权认证。
