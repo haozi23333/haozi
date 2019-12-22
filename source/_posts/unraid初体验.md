@@ -1,7 +1,10 @@
 ---
 title: unraid初体验
 date: 2019-08-22 14:39:09
-tags: 新玩意 瞎搞
+tags: 
+	- 新玩意
+	- 瞎搞
+	- unraid
 ---
 
 
@@ -65,6 +68,8 @@ U盘部署好, 开机就行了
 ## 购买
 
 参见 [Unraid 购买授权](/2019/08/24/unraid购买授权/)
+
+如果想看到更多的关于 UNRAID  的文章， 点击 [UNRAID 分类把](/tags/#unraid)
 
 ## ~
 

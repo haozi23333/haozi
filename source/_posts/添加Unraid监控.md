@@ -26,7 +26,6 @@ Telegraf 采集 Unraid 上的硬件信息, 并存储在 InfluxDB 内, 并使用 
 {% asset_img TIG2.png 原理 %}
 
 <center>这里使用了@MariusGilberg 的图 </center>
-
 ## 安装基础软件
 
 ### 安装Community Apps
@@ -155,11 +154,9 @@ https://forums.unraid.net/topic/38582-plug-in-community-applications/
 
 最后展示一下我整理后的界面
 
-
-
 {% asset_img haozi_dashboard.png 控制台%}
 
-
+如果想看到更多的关于 UNRAID  的文章， 点击 [UNRAID 分类把](/tags/#unraid)
 
 ## 参考资料
 
