@@ -1,5 +1,5 @@
 ---
-title: 添加Unraid监控
+title: 给Unraid添加可视化监控
 date: 2019-12-23 00:50:57
 tags:
 	- unraid
@@ -7,7 +7,7 @@ tags:
 
 
 
-# 添加Unraid添加可视化监控
+# 给Unraid添加可视化监控
 
 最近看到很多人都是因为 unraid 访问到我的博客, 这里也更新一些小技巧
 本篇是如何给 Unraid 增加一个可视化的监控
@@ -31,7 +31,6 @@ Telegraf 采集 Unraid 上的硬件信息, 并存储在 InfluxDB 内, 并使用 
 {% asset_img TIG2.png 原理 %}
 
 <center>这里使用了@MariusGilberg 的图 </center>
-
 
 点击这些阅读更多内容 **[Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), [InfluxDB](https://www.influxdata.com/time-series-platform/), [Grafana](https://grafana.com/docs/v4.3/)**
 
