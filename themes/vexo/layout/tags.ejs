@@ -28,7 +28,7 @@
     $('#article-banner').geopattern(url)
     $('header.header').removeClass('fixed-header')
 
-    var tag = location.hash.replace('#', '')
+    var tag = decodeURI(location.hash).replace('#', '')
     if (tag) {
       var tagId = "#tag-" + tag;
       $("html, body").animate({
