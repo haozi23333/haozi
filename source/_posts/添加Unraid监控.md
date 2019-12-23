@@ -17,7 +17,12 @@ tags:
 
 <!--more-->
 
+可以统计
 
+*  UPS  信息
+* CPU 信息 （温度， 使用率）
+* 磁盘 信息 （读写速度， 容量）
+* Dcoker 信息
 
 ## 原理
 
@@ -26,6 +31,10 @@ Telegraf 采集 Unraid 上的硬件信息, 并存储在 InfluxDB 内, 并使用 
 {% asset_img TIG2.png 原理 %}
 
 <center>这里使用了@MariusGilberg 的图 </center>
+
+
+点击这些阅读更多内容 **[Telegraf](https://www.influxdata.com/time-series-platform/telegraf/), [InfluxDB](https://www.influxdata.com/time-series-platform/), [Grafana](https://grafana.com/docs/v4.3/)**
+
 ## 安装基础软件
 
 ### 安装Community Apps
