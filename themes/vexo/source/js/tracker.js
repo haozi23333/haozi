@@ -57,7 +57,7 @@ $(document).ready(() => {
       }
     }, 5000)
 
-    ga('content.send', 'event', 'look', document.location.href)
+    ga('content.send', 'event', 'look', decodeURI(document.location.href))
 
 
     if (document.referrer !== "") {
