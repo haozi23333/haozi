@@ -1,20 +1,16 @@
 $(document).ready(() => {
 
-  function createDialog() {
-
-  }
-
   if (document.location.search.indexOf("disableTracker=true") > 1) {
     return
   }
 
-  if (!localStorage.getItem('disableTracker')) {
-    return
-  } else if (localStorage.getItem('disableTracker') === false) {
-    // 创建 询问窗口
-  }
-
-  
+  // if (!localStorage.getItem('disableTracker')) {
+  //   return
+  // } else if (localStorage.getItem('disableTracker') === false) {
+  //   // 创建 询问窗口
+  // }
+  //
+  //
   function ga_proxy() {
     if (document.location.href.indexOf('127.0.0.1') > -1 || document.location.href.indexOf('localhost') > -1) {
       console.log(`ga(`)
