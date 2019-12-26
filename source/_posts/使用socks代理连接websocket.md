@@ -13,7 +13,7 @@ tags:
 
 ![哈欠](/sticker/tang.png)
 
-<!--more-->
+<!--more-->	
 
 ## 准备
 
