@@ -1,26 +1,68 @@
 <main class="app-body">
   <% page.posts.each(function(post) { %>
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
-      </h2>
-      <p class="article-date"><%- date(post.date, "LL") %></p>
-      <% if (post.tags && post.tags.length) { %>
-        <%- partial('_partial/tag', { tags: post.tags }) %>
-      <% } %>
-      <div class="article-summary">
-        <% if (post.excerpt) { %>
-          <%- post.excerpt %>
-        <% } else { %>
-          <%- truncate(strip_html(post.content), { length: 150, omission: ' ...' }) %>
-        <% } %>
-      </div>
-      <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
+
+        <article class="article-card">
+            <% post.tags.each(function(tag) { %>
+                <% if (tag.name === 'timeline') { %>
+                <div style="border-left: 1px dotted #ccc;padding-left: 30px;position: relative">
+                    <svg style="height: 25px; left: -100px;position: absolute;top: calc(50% - 12.5px)"  t="1577375080016" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1282" width="200" height="200"><path d="M896 618.666667H443.733333c-10.666667 0-21.333333-4.266667-29.866666-12.8l-78.933334-78.933334c-8.533333-8.533333-8.533333-21.333333 0-29.866666l78.933334-78.933334c8.533333-8.533333 19.2-12.8 29.866666-12.8H896c12.8 0 21.333333 8.533333 21.333333 21.333334v170.666666c0 12.8-8.533333 21.333333-21.333333 21.333334z" fill="#3F51B5" p-id="1283"></path><path d="M192 128h42.666667v768H192z" fill="#CFD8DC" p-id="1284"></path><path d="M213.333333 213.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#90A4AE" p-id="1285"></path><path d="M213.333333 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#90A4AE" p-id="1286"></path><path d="M213.333333 810.666667m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#90A4AE" p-id="1287"></path><path d="M725.333333 917.333333H443.733333c-10.666667 0-21.333333-4.266667-29.866666-12.8l-78.933334-78.933333c-8.533333-8.533333-8.533333-21.333333 0-29.866667l78.933334-78.933333c8.533333-8.533333 19.2-12.8 29.866666-12.8H725.333333c12.8 0 21.333333 8.533333 21.333334 21.333333v170.666667c0 12.8-8.533333 21.333333-21.333334 21.333333z" fill="#448AFF" p-id="1288"></path><path d="M746.666667 320H443.733333c-10.666667 0-21.333333-4.266667-29.866666-12.8l-78.933334-78.933333c-8.533333-8.533333-8.533333-21.333333 0-29.866667l78.933334-78.933333c8.533333-8.533333 19.2-12.8 29.866666-12.8H746.666667c12.8 0 21.333333 8.533333 21.333333 21.333333v170.666667c0 12.8-8.533333 21.333333-21.333333 21.333333z" fill="#00BCD4" p-id="1289"></path></svg>
+                    <div class="article-summary">
+                        <%- post.excerpt %>
+                    </div>
+                    <div style="margin-top: 20px">
+                        <div style="float: left;width: 80px">
+                            <a href="<%- url_for(post.path) %>">
+                                <svg style="height: 20px;width: 20px;float: left" t="1577375118390" class="icon" viewBox="0 0 1214 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2117" width="200" height="200"><path d="M964.352982 196.442274H250.01744A53.575166 53.575166 0 0 0 196.442274 250.01744v339.309382A53.575166 53.575166 0 0 0 250.01744 642.901988h214.300663l117.508196 117.508197a35.716777 35.716777 0 0 0 50.717824 0L750.052319 642.901988h214.300663a53.575166 53.575166 0 0 0 53.575166-53.575166V250.01744A53.575166 53.575166 0 0 0 964.352982 196.442274z" fill="#FFC824" p-id="2118"></path><path d="M607.185211 477.53331a35.716777 35.716777 0 0 1-35.716777-35.716777v-53.575166a35.716777 35.716777 0 1 1 71.433554 0v53.575166a35.716777 35.716777 0 0 1-35.716777 35.716777zM383.955354 477.53331a35.716777 35.716777 0 0 1-35.716777-35.716777v-53.575166a35.716777 35.716777 0 1 1 71.433554 0v53.575166a35.716777 35.716777 0 0 1-35.716777 35.716777zM830.415068 477.53331a35.716777 35.716777 0 0 1-35.716777-35.716777v-53.575166a35.716777 35.716777 0 1 1 71.433554 0v53.575166a35.716777 35.716777 0 0 1-35.716777 35.716777zM361.453784 71.433554h-17.858388a35.716777 35.716777 0 0 1 0-71.433554h17.858388a35.716777 35.716777 0 0 1 0 71.433554z" fill="#6B400D" p-id="2119"></path><path d="M607.185211 1024a107.150331 107.150331 0 0 1-75.719567-31.430764l-153.224974-153.224974H142.867108a142.867108 142.867108 0 0 1-142.867108-142.867108V142.867108a142.867108 142.867108 0 0 1 142.867108-142.867108h53.575166a35.716777 35.716777 0 0 1 0 71.433554H142.867108a71.433554 71.433554 0 0 0-71.433554 71.433554v553.610046a71.433554 71.433554 0 0 0 71.433554 71.433554h250.01744a35.716777 35.716777 0 0 1 25.358912 10.357865l163.582839 163.940007a35.716777 35.716777 0 0 0 50.717824 0l163.582839-163.940007a35.716777 35.716777 0 0 1 25.358912-10.357865h250.01744a71.433554 71.433554 0 0 0 71.433554-71.433554V142.867108a71.433554 71.433554 0 0 0-71.433554-71.433554H535.751657a35.716777 35.716777 0 0 1 0-71.433554h535.751657a142.867108 142.867108 0 0 1 142.867108 142.867108v553.610046a142.867108 142.867108 0 0 1-142.867108 142.867108h-235.373562l-153.224973 153.224974a107.150331 107.150331 0 0 1-75.719568 31.430764z" fill="#6B400D" p-id="2120"></path></svg>
+                                <div style="line-height: 20px;margin-left: 30px">评论</div>
+                            </a>
+                        </div>
+                        <div style="float: left;color: #42b983;margin-right: 20px"><%- date(post.date, "LL") %></div>
+                        <div style="float: left" class="timeline">
+                            <% if (post.tags && post.tags.length) { %>
+                                <%- partial('_partial/tag', { tags: post.tags }) %>
+                            <% } %>
+                        </div>
+
+                    </div>
+                </div>
+                <% post.isTimeline = true %>
+                <% }%>
+            <% }) %>
+                <% if (!post.isTimeline) { %>
+                    <h2 class="article-head">
+                        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+                    </h2>
+                    <p class="article-date"><%- date(post.date, "LL") %></p>
+                    <% if (post.tags && post.tags.length) { %>
+                        <%- partial('_partial/tag', { tags: post.tags }) %>
+                    <% } %>
+                    <div class="article-summary">
+                        <% if (post.excerpt) { %>
+                            <%- post.excerpt %>
+                        <% } else { %>
+                            <%- truncate(strip_html(post.content), { length: 150, omission: ' ...' }) %>
+                        <% } %>
+                    </div>
+                    <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
+                <% }%>
+
+
     </article>
   <% }) %>
 
   <% if (page.total > 1){ %>
     <%- partial('_partial/pager') %>
   <% } %>
+
+<!--    <div class="markdown-content" style="position: fixed; height: 300px; width: 500px; background: white;top: 200px">-->
+<!--        本站已经启用 Google Analytics, 以及一些自定义的埋点事件,-->
+<!--        将会收集一些包括但不限于 您的 UI 点击事件, referrer 信息, Gitalk 登录状态等-->
+<!--        收集的信息将用来改善您的使用体验-->
+<!--        如果想知道更多相关信息, 请点击 <a href="" target="_blank">阅读详情</a>-->
+<!--        <blockquote style="border-left: 3px solid #e40600">即使您点击了拒绝分享, Google Analytics 仍然会加载, 但不会加载自定义埋点事件</blockquote>-->
+<!--        <br>-->
+<!--        <div style="height: 30px; float: left;margin-left: 3rem">同意分享</div>-->
+<!--        <div style="height: 30px; float: left;margin-left: 3rem">拒绝分享</div>-->
+<!--    </div>-->
 </main>
 
