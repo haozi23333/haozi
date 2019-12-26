@@ -11,8 +11,8 @@
     <section class="markdown-content"><%- page.content %></section>
     <!-- Tags START -->
     <% if (page.tags && page.tags.length) { %>
-      <div class="tags">
-        <span>Tags:</span>
+      <div class="tags ">
+        <span style="float: left">Tags:</span>
         <%- partial('_partial/tag', { tags: page.tags }) %>
       </div>
     <% } %>
