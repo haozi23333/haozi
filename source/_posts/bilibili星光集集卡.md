@@ -2,6 +2,9 @@
 title: bilibili星光集集卡
 date: 2020-01-24 18:16:57
 tags:
+	- 收集
+	- bilibili
+	- 集卡
 ---
 
 
