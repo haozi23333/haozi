@@ -18,7 +18,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="简隐月子喵 -> haozi » Feed" href="https://haozi.moe/atom.xml">
-  <% if (page.title){ %>
+  <% if (page.excerpt){ %>
     <%- partial('meta/seo', {description: page.excerpt.match(/<p\s*.*>(\s*.*)<\/p>/g).map(v => v.replace(/<.+?>/g, '')).join('\n')}) %>
     <%- partial('meta/opengraph', {title: page.title, description: page.excerpt.match(/<p\s*.*>(\s*.*)<\/p>/g).map(v => v.replace(/<.+?>/g, '')).join('\n')}) %>
   <% } %>
