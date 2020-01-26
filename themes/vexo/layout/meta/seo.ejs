@@ -1,0 +1,34 @@
+<%
+  var keywords = '';
+
+  var terms = [];
+
+  if (page.categories) {
+    page.categories.each(function(item){
+      terms.push(item.name);
+    })
+  }
+
+  if (page.tags) {
+    page.tags.each(function(item){
+      terms.push(item.name);
+    })
+  }
+
+  if (page.keywords) {
+    page.keywords.forEach(function(keyword){
+      terms.push(keyword);
+    })
+  }
+
+  if (terms) {
+    keywords = terms.join(', ');
+  }
+%>
+
+  <meta name="description"
+        content="<%= description || config.description %>">
+  <meta name="keywords"
+        content="<%= keywords || config.keywords %>">
+  <meta name="author"
+        content="<%= page.author || config.author %>">

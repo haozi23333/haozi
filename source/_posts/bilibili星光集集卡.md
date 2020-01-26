@@ -18,9 +18,7 @@ tags:
 如果想一起收集欢迎来我的妙妙屋: 🐧群 `1033818141`
 
 <center>花嫁卡镇楼</center>
-
-![](https://static.haozi.moe/星光集/original/1443d730f50e9c0443e5ab09cee36be7.png)
-
+<img src="https://static.haozi.moe/星光集/original/1443d730f50e9c0443e5ab09cee36be7.png" height="500"/>
 <!--more-->
 ## 统计
 

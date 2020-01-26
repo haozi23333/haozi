@@ -1,0 +1,31 @@
+<%  
+  var ogi; 
+  if (page.opengraphimage) {
+    ogi = page.opengraphimage;
+  } else if(config.opengraphimage) {
+    ogi = config.opengraphimage;
+  } else {
+    ogi = 'images/broken-person.png';
+  }
+  ogi = config.url + url_for(ogi);
+%>
+
+  <meta property="og:locale"       
+        content="<%= config.language || "en" %>">
+  <meta property="og:title"        
+        content="<%= title || config.title %>">
+<% if (is_post()) {%>
+  <meta property="og:type"         
+        content="article">
+<% } %>
+<% if (page.excerpt) {%>
+  <meta property="og:description"  
+        content="<%= description || config.description %>">
+<% } %>
+  <meta property="og:url"          content="<%= page.permalink %>">
+  <meta property="og:site_name"    content="<%= config.title %>">
+  <meta property="og:image"        content="<%= ogi %>">
+  <meta property="og:latitude"     content="<%= theme.og_latitude %>"/>
+  <meta property="og:longitude"    content="<%= theme.og_longitude %>"/>
+  <meta property="og:locality"     content="<%= theme.og_locality %>"/>
+  <meta property="og:country-name" content="<%= theme.og_country_name %>"/>
