@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: haoziの窝
-subtitle: 夏基霸涉猎
+title: 月月月子喵~
+subtitle: 可可爱爱月子喵~
 description: 一个啥都学啥都做的还没女朋友的萌二程序喵~
-keywords: 萌二
+keywords: 全菜工程师,全沾工程师,Nodejs,瞎搞,Rust,作死
 author: haozi
 language: zh-CN
 timezone: UTC
@@ -34,7 +34,7 @@ default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
-render_drafts: false
+render_drafts: falsepost_asset_folder
 post_asset_folder: true
 relative_link: false
 future: true
