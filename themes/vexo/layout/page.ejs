@@ -109,16 +109,16 @@
 
         const css = {}
 
-        if(imageW > ($(window).width() *0.9)) {
-          imageW = $(window).width() *0.9
-          css.width = imageW + 'px'
-        } else if (imageH > ($(window).height() *0.9)) {
+        if (imageH > ($(window).height() *0.9)) {
           imageH = $(window).height() *0.9
           css.height = imageH + 'px'
+        } else if(imageW > ($(window).width() *0.9)) {
+          imageW = $(window).width() *0.9
+          css.width = imageW + 'px'
         }
-        var zoom = ($(window).width() *0.9 / imageW).toFixed(2)
-        zoom = zoom < 1 ? 1 : zoom
-        zoom = zoom > 2 ? 2 : zoom
+        // var zoom = ($(window).width() *0.9 / imageW).toFixed(2)
+        // zoom = zoom < 1 ? 1 : zoom
+        // zoom = zoom > 2 ? 2 : zoom
         var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
         $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
@@ -126,7 +126,9 @@
 
 
 
-        css.transform = `translate3d(0, ${Math.abs(transY) / 2}px, 0)`
+
+        css.transform = `translate3d(0, ${Math.max(transY / 2, 0)}px, 0)`
+
         $('.image-view-wrap img').css(css)
         $('html').css('overflow', 'hidden')
 
