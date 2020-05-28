@@ -153,7 +153,7 @@ h2.article-head
     font-size: 2.2em
     color: yellow
     //text-shadow: 0 0 40px color-dark
-    opacity: 0
+    opacity: 1
     transform: translateY(-20px)
     transition: all 0.4s
     @media m-mobile
@@ -161,7 +161,7 @@ h2.article-head
   .post-date
     margin: 10px 0 20px 0
     color: magenta
-    opacity: 0
+    opacity: 1
     transform: translateY(-20px)
     transition: all 0.4s
     transition-delay: 0.05s
@@ -169,7 +169,7 @@ h2.article-head
     display: flex
     width: 100%
     justify-content: center
-    opacity: 0
+    opacity: 1
     transform: translateY(-20px)
     transition: all 0.4s
     transition-delay: 0.1s
@@ -286,7 +286,7 @@ h2.article-head
     cursor: zoom-out
     transition: all 0.3s ease-in-out
 .wrap-active
-  background-color: rgba(255, 255, 255, .9)
+  background-color: rgba(	253, 246, 227, .7)
 
 .scroll-top
   cursor: pointer
@@ -332,3 +332,32 @@ h2.article-head
 @import "_partial/project"
 @import "_partial/catalog"
 @import "_partial/nav"
+
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+  width: 4px;
+  background-color: yellow;
+  -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #fff; /*滚动条的背景颜色*/
+  -webkit-border-radius: 0; /*滚动条的圆角宽度*/
+}
+::-webkit-scrollbar {
+  width: 12px; /*滚动条的宽度*/
+  height: 8px; /*滚动条的高度*/
+}
+::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+  height: 50px;
+  background-color: yellow;
+  -webkit-border-radius: 4px;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border: 2px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+  height: 50px;
+  background-color: #9f9f9f;
+  -webkit-border-radius: 4px;
+}

@@ -1,5 +1,5 @@
 (function ($) {
-  console.log('© Theme-Vexo | https://github.com/yanm1ng/hexo-theme-vexo')
+  // console.log('© Theme-Vexo | https://github.com/yanm1ng/hexo-theme-vexo')
   var app = $('.app-body')
   var header = $('header.header')
   var banner = document.getElementById('article-banner') || false
@@ -7,33 +7,6 @@
   var top = $('.scroll-top')
   var catalog = $('.catalog-container .toc-main')
   var isOpen = false
-
-  $(document).ready(function () {
-    NProgress.start()
-    $('#nprogress .bar').css({
-      'background': '#42b983'
-    })
-    $('#nprogress .spinner').hide()
-
-    var fade = {
-      transform: 'translateY(0)',
-      opacity: 1
-    }
-    if (banner) {
-      app.css('transition-delay', '0.15s')
-      $('#article-banner').children().css(fade)
-    }
-    if (about) {
-      $('.author').children().css(fade)
-    }
-    app.css(fade)
-  })
-
-  window.onload = function () {
-    setTimeout(function () {
-      NProgress.done()
-    }, 200)
-  }
 
   $('.menu').on('click', function () {
     if (!header.hasClass('fixed-header') || isOpen) {
@@ -155,7 +128,6 @@ if (document.location.pathname === '/') {
 
 $(document).ready(() => {
   $('tr.header').removeClass('header');
-  console.log($('#ghcard-*'))
   $('#ghcard-*').css('margin-top', '1rem');
 });
 
@@ -212,36 +184,36 @@ $(document).ready(() => {
   }));
 })();
 
-// // 百度 站长工具 自动推送工具代码
-// (function(){
-//   var bp = document.createElement('script');
-//   var curProtocol = window.location.protocol.split(':')[0];
-//   if (curProtocol === 'https') {
-//     bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-//   }
-//   else {
-//     bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-//   }
+// // // 百度 站长工具 自动推送工具代码
+// // (function(){
+// //   var bp = document.createElement('script');
+// //   var curProtocol = window.location.protocol.split(':')[0];
+// //   if (curProtocol === 'https') {
+// //     bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+// //   }
+// //   else {
+// //     bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+// //   }
+// //
+// //   var s = document.getElementsByTagName("script")[0];
+// //   s.parentNode.insertBefore(bp, s);
+// // })();
 //
-//   var s = document.getElementsByTagName("script")[0];
-//   s.parentNode.insertBefore(bp, s);
+//
+// // 显示是多天之前发布的信息
+// (function () {
+//   // 删除多余的 H1 标签
+//   $('.article-card .article-summary h1').remove()
+//
+//   if ($('.post-date').length === 1) {
+//     const [y, m, d] = $('.post-date').text().split('-');
+//     const day = (new Date()-new Date([m, d, y].join('-'))) / (3600 * 24 * 1000);
+//     if (day > 1) {
+//       if ($('.markdown-content > :eq(0)')[0].tagName !== 'H1') {
+//         $(`.markdown-content > :eq(0)`).before(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
+//       } else {
+//         $(`.markdown-content > :eq(0)`).after(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
+//       }
+//     }
+//   }
 // })();
-
-
-// 显示是多天之前发布的信息
-(function () {
-  // 删除多余的 H1 标签
-  $('.article-card .article-summary h1').remove()
-
-  if ($('.post-date').length === 1) {
-    const [y, m, d] = $('.post-date').text().split('-');
-    const day = (new Date()-new Date([m, d, y].join('-'))) / (3600 * 24 * 1000);
-    if (day > 1) {
-      if ($('.markdown-content > :eq(0)')[0].tagName !== 'H1') {
-        $(`.markdown-content > :eq(0)`).before(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
-      } else {
-        $(`.markdown-content > :eq(0)`).after(`<blockquote style="border-left: solid 4px orange"><p>注意：本文发布于 ${Math.floor(day)} 天前，文章中的一些内容可能已经过时</p></blockquote>`)
-      }
-    }
-  }
-})();

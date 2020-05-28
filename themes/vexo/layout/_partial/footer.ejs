@@ -10,6 +10,7 @@
      <a class="rss-href" target="_blank" href="https://haozi.moe/atom.xml">RSS 订阅</a>
   </p>
 </footer>
+
 <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/mermaid/<%= theme.mermaid.version %>/mermaid.min.js'></script>-->
 <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/8.5.0/mermaid.min.js"></script>
 <script>
@@ -31,22 +32,6 @@
   async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
-</script>
-
-<script>
-</script>
-<!-- Baidu Tongji -->
-<% if (config.ba_track_id) { %>
-<script>
-    var _baId = '<%= theme.baidu_id %>';
-    // Originial
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
 </script>
 <% } %>
 <%- js('js/script') %>
