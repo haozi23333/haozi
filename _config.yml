@@ -90,7 +90,7 @@ sitemap:
 # hexo-helper-live2d
 #live2d-widget-model-nico
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   model:
     use: /live2d/models/chitose/model.json
