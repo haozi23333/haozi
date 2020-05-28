@@ -167,7 +167,7 @@ $(document).ready(() => {
     return;
   }
 
-  const base_url = '//cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/';
+  const base_url = '//cdn.bootcdn.net/ajax/libs/ace/1.4.11/';
 
   const get_script = function (url) {
     return new Promise((s, j) => {
@@ -212,20 +212,20 @@ $(document).ready(() => {
   }));
 })();
 
-// 百度 站长工具 自动推送工具代码
-(function(){
-  var bp = document.createElement('script');
-  var curProtocol = window.location.protocol.split(':')[0];
-  if (curProtocol === 'https') {
-    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-  }
-  else {
-    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-  }
-
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(bp, s);
-})();
+// // 百度 站长工具 自动推送工具代码
+// (function(){
+//   var bp = document.createElement('script');
+//   var curProtocol = window.location.protocol.split(':')[0];
+//   if (curProtocol === 'https') {
+//     bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+//   }
+//   else {
+//     bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+//   }
+//
+//   var s = document.getElementsByTagName("script")[0];
+//   s.parentNode.insertBefore(bp, s);
+// })();
 
 
 // 显示是多天之前发布的信息

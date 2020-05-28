@@ -7,6 +7,8 @@
   pre, code
     font-family: 'Fira Code', 'Roboto Mono', Monaco, courier, monospace
     font-size: 13px
+    background-color: base2
+    color: base1
     @media m-mobile
       font-size: 12px
     .line
@@ -15,22 +17,28 @@
   p, ul li
     line-height: 1.6em
     code
-      background-color: color-background
-      color: color-orange
+      background-color: base2
+      color: base1
       padding: 3px 5px
       margin: 0 2px
       border-radius: 2px
       white-space: nowrap
   h1
+    &:first-child
+      display: none
+    color: orange
     font-size: 1.8em
   h2
+    color: orange
     font-size: 1.5em
   h3
+    color: orange
     margin: 1em 0
     font-size: 1.3em
     padding-bottom: .3em
     border-bottom: 1px solid color-border
   h4
+    color: orange
     margin: 1em 0
     font-size: 1.2em
     &:before
@@ -40,12 +48,13 @@
       font-size: 1.2em
       font-weight: 700
   h5
+    color: orange
     font-size: 1em
     margin: .8em 0
   blockquote
     margin: 1em 0
     padding: 15px 20px
-    border-left: 4px solid color-primary
+    border-left: 4px solid blue
     background: color-background
     border-bottom-right-radius: 2px
     border-top-right-radius: 2px

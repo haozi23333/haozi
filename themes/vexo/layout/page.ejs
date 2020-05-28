@@ -81,11 +81,11 @@
     var url = '<%= config.url %>/<%= page.path %>';
     var banner = '<%= page.banner %>'
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
+      // $('#article-banner').css({
+      //   'background-image': 'url(' + banner + ')'
+      // })
     } else {
-      $('#article-banner').geopattern(url)
+      // $('#article-banner').geopattern(url)
     }
     $('header.header').removeClass('fixed-header')
 

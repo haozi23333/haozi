@@ -8,7 +8,7 @@
 <script>
   (function() {
     var url = '<%= config.url %>/<%= page.path %>';
-    $('#article-banner').geopattern(url);
+    // $('#article-banner').geopattern(url);
     $('header.header').removeClass('fixed-header')
     $.ajax({
       headers: {
@@ -42,7 +42,7 @@
         $('#all-project').html(cardHtml)
         $('.card-header').each(function() {
           var name = $(this).data('name');
-          $(this).geopattern(name);
+          // $(this).geopattern(name);
         })
       }
     });
