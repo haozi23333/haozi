@@ -101,6 +101,9 @@ ul.f
     width: 100%
     height: 60px
     margin-top: 1rem
+    &:last-child {
+      margin-bottom: 25px
+    }
     a
       height: 60px
       display: flex
@@ -110,6 +113,8 @@ ul.f
         white-space: nowrap;
         height: 60px
         line-height 60px
+
+
 
 // 特殊
 // 大佬位 https://chanshiyu.com/
@@ -155,10 +160,6 @@ ul.f
   position: absolute;
   height: 8px;
   opacity: 0;
-
-    &:last-child {
-      margin-bottom: 10px
-    }
 }
 
 .yuemeng::after {
@@ -182,14 +183,14 @@ ul.f
 .yunmeng-box:hover .yuemeng::before {
   width: 87%;
   -webkit-box-shadow: 0 0 30px #26c9ff;
-  box-shadow: 0 0 30px #26c9ff;
+  box-shadow: 0 0 20px #26c9ff;
   opacity: .7
 }
 
 .yunmeng-box:hover .yuemeng::after {
   width: 87%;
   -webkit-box-shadow: 0 0 30px red;
-  box-shadow: 0 0 30px red;
+  box-shadow: 0 0 20px red;
   opacity: .7
 }
 
