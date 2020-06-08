@@ -135,4 +135,10 @@ feed:
   icon: images/logo.png
   autodiscovery: true
 
+lazyload:
+  enable: true
+  onlypost: false # optional
+  loadingImg: /css/images/loading.gif
+  isSPA: false # optional
+
 rss: /atom.xml

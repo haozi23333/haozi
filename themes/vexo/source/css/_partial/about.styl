@@ -134,3 +134,64 @@ ul.f
 .moedog
   *
     cursor: url(https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@0.4.1/static/images/pointer.cur),default !important;
+
+
+.yuemeng
+  position: relative
+
+
+.yuemeng::before {
+  background-color: #26c9ff;
+  width: 0;
+  top: -5px;
+  -webkit-box-shadow: 0 0 0 #26c9ff;
+  box-shadow: 0 0 0 #26c9ff;
+  right: 13%;
+  border-radius: 20px 10px 10px 20px;
+  -webkit-transition: .3s cubic-bezier(.17,.67,.46,.97);
+  -o-transition: .3s cubic-bezier(.17,.67,.46,.97);
+  transition: .3s cubic-bezier(.17,.67,.46,.97);
+  content: '';
+  position: absolute;
+  height: 8px;
+  opacity: 0;
+
+    &:last-child {
+      margin-bottom: 10px
+    }
+}
+
+.yuemeng::after {
+  position: absolute;
+  background-color: red;
+  width: 0;
+  height: 8px;
+  bottom: -5px;
+  -webkit-box-shadow: 0 0 0 red;
+  box-shadow: 0 0 0 red;
+  left: 13%;
+  border-radius: 10px 20px 20px 10px;
+  z-index: 1000;
+  -webkit-transition: .3s cubic-bezier(.17,.67,.46,.97);
+  -o-transition: .3s cubic-bezier(.17,.67,.46,.97);
+  transition: .3s cubic-bezier(.17,.67,.46,.97);
+  content: '';
+  opacity: 0;
+}
+
+.yunmeng-box:hover .yuemeng::before {
+  width: 87%;
+  -webkit-box-shadow: 0 0 30px #26c9ff;
+  box-shadow: 0 0 30px #26c9ff;
+  opacity: .7
+}
+
+.yunmeng-box:hover .yuemeng::after {
+  width: 87%;
+  -webkit-box-shadow: 0 0 30px red;
+  box-shadow: 0 0 30px red;
+  opacity: .7
+}
+
+
+
