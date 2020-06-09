@@ -121,10 +121,15 @@
         // zoom = zoom > 2 ? 2 : zoom
         var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
-        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+
+        const image =
+                `<div class="image-view-wrap"><div class="image-view-inner"><`
+                + `img src="${src}" /></div></div>`
+        $('body').append(image)
         $('.image-view-wrap').addClass('wrap-active')
 
 
+        console.log(src)
 
 
         css.transform = `translate3d(0, ${Math.max(transY / 2, 0)}px, 0)`
@@ -134,6 +139,10 @@
 
         $('.image-view-wrap').on('click', function() {
           $(this).remove()
+          $('.image-view-inner img').attr(
+                  'src',
+                  src
+          )
           $('html').attr('style', '')
         })
       }
