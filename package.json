@@ -29,7 +29,6 @@
     "three": "^0.108.0",
     "three.js": "^0.77.1",
     "ts-loader": "^6.1.0",
-    "typescript": "^3.6.3",
-    "hexo-haozi": "./plugin"
+    "typescript": "^3.6.3"
   }
 }
