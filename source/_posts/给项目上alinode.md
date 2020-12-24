@@ -62,7 +62,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:v6.4.1-alpine
 
 
 
-半夜的负载是真的低 QPS竟然有2, 大概是运营没关后台, 有自动刷新请求在执行
+半夜的负载是真的低, 不过QPS竟然有2, 大概是运营没关后台, 有自动刷新请求在执行
 
 ![image-20201225015155465](./给项目上alinode/image-20201225015155465.png)
 
