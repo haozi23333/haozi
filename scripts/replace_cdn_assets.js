@@ -1,4 +1,8 @@
 hexo.extend.filter.register('after_render:html', function(data){
+    const { config } = this;
+    if (config.mode === 'local') {
+        return data
+    }
     data = data.replace(/<img.*?src="(.*?)".*?\/?>/g, (img, src, content) => {
         img = img.replace(/src="(.*?)"/ig, (url) => {
             if (url[5] === '/' &&  url[6] !== '/') {
