@@ -5,10 +5,23 @@
     <a href="javascript:;"></a>
   </div>
 </div>
+<%
+ function replace_img_url(html) {
+   return html.replace(/<img.+?src="(.+?)".+?>/ig, (html, src) => {
+     if (src.slice(0, 2) === './') {
+       const [, title, ...path] = src.split('/')
+       if (title === page.permalink.split('/').slice(-2)[0] || title === page.title) {
+         return html.replace(src, './' + path.join('/'))
+       }
+     }
+     return html
+   })
+ }
+ %>
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><%- page.content %></section>
+    <section class="markdown-content"><%- replace_img_url(page.content) %></section>
     <!-- Tags START -->
     <% if (page.tags && page.tags.length) { %>
       <div class="tags ">

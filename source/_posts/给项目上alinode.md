@@ -10,7 +10,11 @@ tags:
 
 之前高负载的时候需要扩容到3个,  通过 redis 来共享异步任务,  才能处理完,  觉得里面某些组件确实有点慢的离谱了, 懒得打日志了, 直接挂个 Trace
 
-![file_6535959-min](./给项目上alinode/file_6535959-min.png)
+
+
+
+
+<img src="./给项目上alinode/file_6535917-min.png" style="zoom:50%;" />
 
 <!--more-->
 
@@ -36,7 +40,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:v6.4.1-alpine
 
 直接滚动更新, 不出意外1分钟内, 就可以在性能平台看到实例了, 
 
-![file_6535917-min](./给项目上alinode/file_6535917-min.png)
+![file_6535917-min](./给项目上alinode/file_6535917-min.png =40x)
 
 ## 排错
 

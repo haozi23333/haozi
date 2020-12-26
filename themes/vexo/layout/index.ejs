@@ -38,9 +38,25 @@
         <% if (post.tags && post.tags.length) { %>
             <%- partial('_partial/tag', { tags: post.tags }) %>
         <% } %>
+
+        <%
+            function replace_img_url(html) {
+                const url_path = post.permalink.match(/\..+?(\/.*)/)[1]
+                return html.replace(/<img.+?src="(.+?)".+?>/ig, (html, src) => {
+                    if (src.slice(0, 2) === './') {
+                        const [, title, ...path] = src.split('/')
+                        if (title === post.permalink.split('/').slice(-2)[0] || title === post.title) {
+                            return html.replace(src, url_path + path.join('/'))
+                        }
+                    }
+                    return html
+                })
+            }
+        %>
+
         <div class="article-summary">
             <% if (post.excerpt) { %>
-                <%- post.excerpt %>
+                <%- replace_img_url(post.excerpt) %>
             <% } else { %>
                 <%- truncate(strip_html(post.content), { length: 150, omission: ' ...' }) %>
             <% } %>
