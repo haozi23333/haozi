@@ -56,7 +56,8 @@
 
         <div class="article-summary">
             <% if (post.excerpt) { %>
-                <%- replace_img_url(post.excerpt) %>
+<!--                <%- replace_img_url(post.excerpt) %>-->
+                <%- post.excerpt %>
             <% } else { %>
                 <%- truncate(strip_html(post.content), { length: 150, omission: ' ...' }) %>
             <% } %>

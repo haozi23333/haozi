@@ -14,3 +14,17 @@ hexo.extend.filter.register('after_render:html', function(data){
     });
     return data;
 });
+
+hexo.extend.filter.register('before_post_render', function (doc) {
+    const url_path = doc.permalink.match(/\..+?(\/.*)/)[1]
+    doc.content = doc.content.replace(/<img.+?src="(.+?)".+?>/ig, (html, src) => {
+        if (src.slice(0, 2) === './') {
+            const [, title, ...path] = src.split('/')
+            if (title === doc.permalink.split('/').slice(-2)[0] || title === doc.title) {
+                console.log({title, path})
+                return html.replace(src, url_path + path.join('/'))
+            }
+        }
+        return html
+    })
+})
