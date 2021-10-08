@@ -22,7 +22,7 @@
     <%- partial('meta/seo', {description: page.excerpt.match(/<p\s*.*>(\s*.*)<\/p>/g).map(v => v.replace(/<.+?>/g, '')).join('\n')}) %>
     <%- partial('meta/opengraph', {title: page.title, description: page.excerpt.match(/<p\s*.*>(\s*.*)<\/p>/g).map(v => v.replace(/<.+?>/g, '')).join('\n')}) %>
   <% } %>
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   <%- css(['css/style']) %>

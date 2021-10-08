@@ -21,7 +21,6 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-<!--    <section class="markdown-content"><%- replace_img_url(page.content) %></section>-->
     <section class="markdown-content"><%- page.content %></section>
     <!-- Tags START -->
     <% if (page.tags && page.tags.length) { %>
@@ -86,7 +85,7 @@
   <!-- Catalog START -->
   <% if (theme.catalog) { %>
     <%- partial('_partial/catalog') %>
-  <% } %>
+  <% } %>f
   <!-- Catalog END -->
 </main>
 
@@ -121,6 +120,7 @@
         var imageH = this.naturalHeight
 
 
+          console.log(this)
         const css = {}
 
         if (imageH > ($(window).height() *0.9)) {
