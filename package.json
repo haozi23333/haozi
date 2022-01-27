@@ -27,7 +27,7 @@
     "hexo-server": "^0.2.0",
     "hexo-toc": "^1.1.0",
     "telegraf": "^3.34.1",
-    "three": "^0.108.0",
+    "three": "^0.137.0",
     "three.js": "^0.77.1",
     "ts-loader": "^6.1.0",
     "typescript": "^3.6.3"
