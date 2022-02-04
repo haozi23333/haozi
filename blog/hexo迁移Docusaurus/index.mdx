@@ -1,0 +1,257 @@
+---
+slug: 2022/02/04/hexo迁移Docusaurus
+title: hexo迁移Docusaurus
+authors: haozi
+tags: [瞎搞, docusaurus, hexo]
+date: 2022-02-04 19:35:07
+---
+
+关于我从hexo迁移到Docusaurus的过程, 遇到的一些问题做一些总结.
+
+<!--truncate-->
+
+## Route 路由对应
+
+在hexo 中我们的url基本都是日期开头, `/2022/02/03/hexo迁移Docusaurus` 这样的形式, 但是 docusaurus 默认就是 `/hexo迁移Docusaurus` 这样的, 也没有啥配置处理, 所以需要在每篇文章中的 `slug` 内手动设置一下.
+
+```yaml
+---
+slug: 2022/02/04/hexo迁移Docusaurus
+title: hexo迁移Docusaurus
+authors: haozi
+tags: [瞎搞, docusaurus, hexo]
+date: 2022-02-04 19:35:07
+---
+```
+如果不处理这个, 后续加载 gitalk 的时候就会出大问题
+
+## 获取主题是白天还是黑夜
+
+```javascript
+import { useColorMode } from '@docusaurus/theme-common';
+```
+
+可以从这个 hook 中拿到当前的主题是白天还是黑夜, 可以用来控制不同的主题的样式
+
+```javascript
+const {isDarkTheme} = useColorMode();
+```
+
+## MDX 全局 Components (MDXComponents)
+
+在 mdx 里面可以混写 React 但是在每个文章中都要声明对应的组件, 否则会报错. 所以需要一个可以申明全局组件的地方
+执行这个命令, 生成 MDXComponents 的文件
+
+```sh
+npm run swizzle  @docusaurus/theme-classic MDXComponents  -- --danger
+```
+
+在 `./src/theme/MDXComponents/index.js`  的 `MDXComponents` 变量中添加自己的组件, 当然也可以替换已有组件, 比如我把原生的 `img` 标签替换成了 ant.design 的 `Image` 组件
+
+```javascript
+const MDXComponents = {
+  /// ....
+  img: (props) => <Image {...props} />,
+  RepoCards: (props) => <RepoCards {...props}/>
+};
+```
+
+顺便在这里也可以引入一些公共的CSS之类的, 在 mdx 文件里面就可以直接写对应的 Component 就不需要手动引入了
+
+<Alert message="如果你发现这个文件编辑无效, 需要重启一下 docusaurus" type="warning" showIcon closable/>
+
+我在这里引用了大量的 antd 组件, 虽然现在样式有点不太兼容, 待后续调整
+
+## 替换代码高亮 (CodeBlock)
+
+首先生成可以替换的 CodeBlock 组件
+`npm run swizzle  @docusaurus/theme-classic CodeBlock`
+
+这里的例子是替换为 `AceEditor`
+
+<RepoCards user="securingsincity" repos={["react-ace"]}/>
+
+这里的 ReactAce 实属比较特殊, 必须在 Client 环境下才能正常使用 需要用到一个 `BrowserOnly` 的组件, 被包裹的组件不会在服务端渲染
+
+```javascript
+import BrowserOnly from '@docusaurus/BrowserOnly';
+```
+
+当然 AceEditor 也需要使用 `require` 异步加载,
+
+<Alert message="如果你发现默认高度无法修改, 固定死的500px, 请设置 maxLines, 这样就会自适应高度了" type="warning" showIcon closable/>
+
+```javascript
+export default function CodeBlock({
+    children,
+    className: blockClassName = '',
+    metastring,
+    title,
+    language: languageProp,
+  }) {
+
+  return (
+      <div className={styles.codeBlockContent}>
+          {
+              <BrowserOnly
+                  fallback={<>加载中.....</>}
+              >
+                  {
+                      () => {
+                          // import AceEditor from "react-ace"
+                          // 懒得做动态加载了, 不省这几十kb了
+                          const AceEditor = require('react-ace').default;
+                          require("ace-builds/src-noconflict/mode-sh");
+                          require("ace-builds/src-noconflict/mode-c_cpp");
+                          require("ace-builds/src-noconflict/mode-mysql");
+                          require("ace-builds/src-noconflict/mode-java");
+                          require("ace-builds/src-noconflict/mode-javascript");
+                          require("ace-builds/src-noconflict/mode-typescript");
+                          require("ace-builds/src-noconflict/mode-powershell");
+                          require("ace-builds/src-noconflict/mode-text");
+                          require("ace-builds/src-noconflict/mode-plain_text");
+                          require("ace-builds/src-noconflict/mode-rust");
+                          require("ace-builds/src-noconflict/mode-python");
+                          require("ace-builds/src-noconflict/mode-json");
+                          require("ace-builds/src-noconflict/mode-protobuf");
+                          require("ace-builds/src-noconflict/mode-golang");
+                          require("ace-builds/src-noconflict/mode-elixir");
+                          require("ace-builds/src-noconflict/mode-html");
+                          require("ace-builds/src-noconflict/mode-yaml");
+                          require("ace-builds/src-noconflict/mode-lua");
+                          require("ace-builds/src-noconflict/mode-groovy");
+                          require("ace-builds/src-noconflict/mode-sql");
+                          require("ace-builds/src-noconflict/mode-markdown");
+                          require("ace-builds/src-noconflict/mode-sh");
+                          require("ace-builds/src-noconflict/theme-solarized_light");
+                          require("ace-builds/src-noconflict/theme-solarized_dark");
+
+
+                          return (
+                              <AceEditor
+                                  mode={language ?? 'text'}
+                                  theme={isDarkTheme ? 'solarized_dark' : 'solarized_light'}
+                                  value={code}
+                                  onChange={() => {}}
+                                  name="UNIQUE_ID_OF_DIV"
+                                  style={{
+                                      width: '100%',
+                                      marginBottom: '.5rem'
+                                  }}
+                                  editorProps={{$blockScrolling: true}}
+                                  setOptions={{
+                                      showLineNumbers: true,
+                                      tabSize: 2,
+                                      wrap: true,
+                                      fontSize: 16,
+                                      maxLines: 50,
+                                      readOnly: true,
+                                  }}
+                              />
+                          )
+                      }
+                  }
+              </BrowserOnly>
+          }
+        <button
+            type="button"
+            aria-label={translate({
+              id: 'theme.CodeBlock.copyButtonAriaLabel',
+              message: 'Copy code to clipboard',
+              description: 'The ARIA label for copy code blocks button',
+            })}
+            className={clsx(styles.copyButton, 'clean-btn')}
+            onClick={handleCopyCode}>
+          {showCopied ? (
+              <Translate
+                  id="theme.CodeBlock.copied"
+                  description="The copied button label on code blocks">
+                Copied
+              </Translate>
+          ) : (
+              <Translate
+                  id="theme.CodeBlock.copy"
+                  description="The copy button label on code blocks">
+                Copy
+              </Translate>
+          )}
+        </button>
+      </div>
+  )
+}
+```
+
+## archives 归档页面年份 从大到小排序
+
+默认从小到大有点不太方便, 需要调整顺序
+
+```sh
+npm run swizzle   @docusaurus/theme-classic BlogArchivePage  -- --danger
+```
+
+```javascript
+function YearsSection({years}) {
+  return (
+    <section className="margin-vert--lg">
+      <div className="container">
+        <div className="row">
+        // 这里添加翻转
+          {years.reverse().map((_props, idx) => (
+            <div key={idx} className="col col--4 margin-vert--lg">
+              <Year {..._props} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+## Gitalk 评论
+
+<RepoCards user="gitalk" repos={["gitalk"]}/>
+
+按照 Gitalk 的文档引入非常简单
+
+```sh
+npm run swizzle   @docusaurus/theme-classic BlogPostPage  -- --danger
+```
+复制博客内容的组件
+
+
+```javascript
+import 'gitalk/dist/gitalk.css'
+import GitalkComponent from "gitalk/dist/gitalk-component";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+```
+添加组件到 BlogPostPage 文件的 BlogLayout 组件最后面, 当然这个也是需要 `BrowserOnly`
+
+```javascript
+    <BrowserOnly>
+        {
+            () => {
+                    <GitalkComponent options={{
+                        clientID: "<clientID>",
+                        clientSecret: "<clientSecret>",
+                        repo: "<你的Issues仓库名>",
+                        owner: "<仓库所有者>",
+                        admin: ['haozi23333'],
+                        labels: ['gitment'],
+                        id: `${title}`,
+                        distractionFreeMode: false  // Fac
+                    }}/>
+            }
+        }
+    </BrowserOnly>
+</BlogLayout>
+```
+
+## 推荐组件
+
+这里会时长更新 可以 mark一下
+
+### Github Repo Card
+用来引用Github仓库
+<RepoCards user="CITIZENDOT" repos={["react-gh-repo-cards"]}/>
+

@@ -1,0 +1,118 @@
+ul.f
+  list-style: none
+
+  li
+    margin-top: .8rem
+  a
+    height: 60px
+    display: flex
+    line-height: 60px
+
+.f_logo
+  height: 60px
+  width: 60px
+  border-radius: 100px
+
+
+.f_span
+  margin-left: .7rem
+  line-height: 60px
+
+
+
+.friends
+  > div
+    > div
+      height: 60px
+      margin-top: 1rem
+      &:last-child
+        margin-bottom: 25px
+      a
+        height: 60px
+        display: flex
+        position: relative
+        img
+        span
+          white-space: nowrap
+          line-height: 60px
+          height: 60px
+
+#about-banner
+  margin-bottom: 3rem
+
+// 特殊
+// 大佬位 https://chanshiyu.com/
+
+@font-face
+  font-family: GuDianMingChaoTi
+  font-weight: 700
+  src: url(https://cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/fonts/GuDianMingChaoTi.ca48eef4.ttf)
+
+
+#friend-info
+  width: 50%
+//@media only screen and (max-width: 1325px)
+//  #friend-info
+//    width: 40%
+
+@media only screen and (max-width: 1100px)
+  #friend-info
+    width: 100%
+
+
+.moedog
+  *
+    cursor: url(https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@0.4.1/static/images/pointer.cur),default !important
+
+
+.yuemeng
+  position: relative
+
+
+.yuemeng::before
+  background-color: #26c9ff
+  width: 0
+  top: -5px
+  -webkit-box-shadow: 0 0 0 #26c9ff
+  box-shadow: 0 0 0 #26c9ff
+  right: 13%
+  border-radius: 20px 10px 10px 20px
+  -webkit-transition: .3s cubic-bezier(.17,.67,.46,.97)
+  -o-transition: .3s cubic-bezier(.17,.67,.46,.97)
+  transition: .3s cubic-bezier(.17,.67,.46,.97)
+  content: ''
+  position: absolute
+  height: 8px
+  opacity: 0
+
+
+.yuemeng::after
+  position: absolute
+  background-color: red
+  width: 0
+  height: 8px
+  bottom: -5px
+  -webkit-box-shadow: 0 0 0 red
+  box-shadow: 0 0 0 red
+  left: 13%
+  border-radius: 10px 20px 20px 10px
+  z-index: 1000
+  -webkit-transition: .3s cubic-bezier(.17,.67,.46,.97)
+  -o-transition: .3s cubic-bezier(.17,.67,.46,.97)
+  transition: .3s cubic-bezier(.17,.67,.46,.97)
+  content: ''
+  opacity: 0
+
+
+.yunmeng-box:hover .yuemeng::before
+  width: 87%
+  -webkit-box-shadow: 0 0 30px #26c9ff
+  box-shadow: 0 0 20px #26c9ff
+  opacity: .7
+
+
+.yunmeng-box:hover .yuemeng::after
+  width: 87%
+  -webkit-box-shadow: 0 0 30px red
+  box-shadow: 0 0 20px red
+  opacity: .7

@@ -1,0 +1,153 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+/* You can override the default Infima variables here. */
+
+
+
+@import "~antd/lib/style/themes/default.less";
+//@import "~antd/lib/style/themes/dark.less";
+
+@alert-success-icon-color: #2AA198;
+
+@import "~antd/dist/antd.less";
+
+@import "solarized-light.scss";
+@import "solarized-dark.scss";
+
+
+body {
+  font-size: 16px !important;
+  font-family:  -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+html[data-theme='dark'] {
+
+  .navbar  {
+ background: #002b36;
+}
+.post-about {
+ p {
+    color: #839496;
+ }
+}
+
+  body {
+    color: #839496;
+  }
+  .gt-container .gt-comment-content {
+    color: #839496;
+  }
+}
+html[data-theme='light'] {
+.navbar  {
+ background: #fdf6e3;
+}
+  .footer__copyright {
+    color: #586e75 !important;
+  }
+
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+  width: 4px;
+  background-color: var(--ifm-navbar-link-hover-color);
+  -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-track-piece {
+//   background-color: #fff; /*滚动条的背景颜色*/
+  -webkit-border-radius: 0; /*滚动条的圆角宽度*/
+}
+::-webkit-scrollbar {
+  width: 12px; /*滚动条的宽度*/
+  height: 8px; /*滚动条的高度*/
+}
+::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+  height: 50px;
+  background-color: var(--ifm-navbar-link-hover-color);
+  -webkit-border-radius: 4px;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border: 2px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+  height: 50px;
+  background-color: #9f9f9f;
+  -webkit-border-radius: 4px;
+}
+
+
+
+
+
+root {
+  --base03: #002b36;
+  --base02: #073642;
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0: #839496;
+  --base1: #93a1a1;
+  --base2: #eee8d5;
+  --base3: #fdf6e3;
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+}
+
+
+.markdown img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    cursor: zoom-in;
+}
+
+html {
+height: 100%
+}
+
+body{
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+
+.post-about p {
+    margin: 0
+}
+
+.hero {
+  background: transparent !important;
+}
+
+.footer  {
+  background: transparent !important;
+}
