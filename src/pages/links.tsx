@@ -253,7 +253,7 @@ function FriendList() {
        </div>
 
        <div>
-         <a target="_blank" rel="noopener noreferrer" href="https://blog.cco.vin">
+         <a target="_blank" rel="noopener noreferrer" href="https://www.xcye.xyz/">
            <object className="f_logo" data="https://ooszy.cco.vin/img/blog-public/avatar.jpg" type="image/jpg">
              <img className="f_logo" src="/sticker/rixiang.png"/>
            </object>

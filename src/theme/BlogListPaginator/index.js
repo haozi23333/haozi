@@ -25,7 +25,7 @@ function BlogListPaginator(props) {
       <div className="pagination-nav__item">
         {previousPage && (
           <PaginatorNavLink
-            permalink={previousPage}
+            permalink={previousPage.replace(/\/\//g, '/')}
             title={
               <Translate
                 id="theme.blog.paginator.newerEntries"

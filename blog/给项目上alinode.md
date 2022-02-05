@@ -12,9 +12,7 @@ date: 2020-12-25 00:18:12
 
 
 
-
-
-<img src="./给项目上alinode/file_6535917-min.png" style={{ zoom: "50%" }} />
+![](./给项目上alinode/file_6535917-min.png)
 
 <!--truncate-->
 
