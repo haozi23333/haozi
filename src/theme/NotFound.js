@@ -7,6 +7,10 @@
 import React, {useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Translate, {translate} from '@docusaurus/Translate';
+// require('./../../static/sticker/toumiao.png').default
+import Toumiao from '../../static/sticker/toumiao.png';
+
+console.log(Toumiao)
 
 function NotFound() {
     const [time, setTime] = React.useState(10);
@@ -40,7 +44,7 @@ function NotFound() {
                </h1>
            </center>
               <center>
-                  <img src={require('./../../static/sticker/toumiao.png').default} />
+                  <img src={Toumiao.src.src} />
               </center>
             <center>偷瞄~</center>
             <center>您访问的资源暂时不存在, 在 <span id="time" style={{ color: 'red' }}>{ time }</span> 秒之后, 将跳转回主页</center>
