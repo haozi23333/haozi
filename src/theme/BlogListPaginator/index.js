@@ -39,7 +39,7 @@ function BlogListPaginator(props) {
       <div className="pagination-nav__item pagination-nav__item--next">
         {nextPage && (
           <PaginatorNavLink
-            permalink={nextPage}
+            permalink={nextPage.replace(/\/\//g, '/')}
             title={
               <Translate
                 id="theme.blog.paginator.olderEntries"

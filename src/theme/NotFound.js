@@ -8,8 +8,9 @@ import React, {useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Translate, {translate} from '@docusaurus/Translate';
 import Toumiao from '../../static/sticker/toumiao.png';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-function NotFound() {
+function NotFoundProxy() {
     const [time, setTime] = React.useState(10);
     useEffect(() => {
         setInterval(() => {
@@ -52,4 +53,16 @@ function NotFound() {
   );
 }
 
+
+function NotFound() {
+    return (
+        <>
+            <BrowserOnly>
+                {
+                    () => <NotFoundProxy />
+                }
+            </BrowserOnly>
+        </>
+    )
+}
 export default NotFound;
