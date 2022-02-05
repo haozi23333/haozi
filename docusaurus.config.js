@@ -35,9 +35,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.less'),
         },
-        googleAnalytics: {
-          trackingID: 'UA-97900713-1'
-        },
+        // googleAnalytics: {
+        //   trackingID: 'UA-97900713-1'
+        // },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,

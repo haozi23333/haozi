@@ -64,6 +64,7 @@ const MDXComponents = {
   h5: (props) => <Heading as="h5" {...props} />,
   h6: (props) => <Heading as="h6" {...props} />,
   img: (props) => <center><Image {...props} /></center>,
+  // img: (props) => <img {...props}/>,
   RepoCards: (props) => <RepoCards {...props}/>,
   Alert: (props) => <Alert {...props}/>,
 };

@@ -7,10 +7,7 @@
 import React, {useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Translate, {translate} from '@docusaurus/Translate';
-// require('./../../static/sticker/toumiao.png').default
 import Toumiao from '../../static/sticker/toumiao.png';
-
-console.log(Toumiao)
 
 function NotFound() {
     const [time, setTime] = React.useState(10);
