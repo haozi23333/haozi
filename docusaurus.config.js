@@ -73,6 +73,10 @@ const config = {
                 label: 'CityCode查询',
                 to: '/tool/citycode',
               },
+              {
+                label: '抽奖',
+                to: '/tool/lottery',
+              },
             ],
           },
           {to: '/links', label: '大佬们', position: 'right'},

@@ -15,9 +15,12 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-form": "^1.55.0",
     "@docusaurus/core": "^0.0.0-4501",
     "@docusaurus/plugin-ideal-image": "^2.0.0-beta.15",
     "@docusaurus/preset-classic": "^0.0.0-4501",
+    "@lucky-canvas/react": "^0.1.6",
     "@mdx-js/react": "^1.6.21",
     "ace-builds": "^1.4.14",
     "antd": "^4.18.5",
@@ -34,6 +37,7 @@
     "react-gh-repo-cards": "^1.0.1",
     "react-syntax-highlighter": "^15.4.5",
     "react-tagcloud": "^2.2.0",
+    "react-use": "^17.3.2",
     "sass": "^1.49.4"
   },
   "devDependencies": {
