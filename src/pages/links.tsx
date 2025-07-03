@@ -203,8 +203,8 @@ function FriendList() {
          </a>
        </div>
        <div>
-         <a target="_blank" rel="noopener noreferrer" href="https://713.moe">
-           <object className="f_logo" data="https://gravatar.loli.net/avatar/a47ae9d9feb6e8f658693c45a25ede37?s=640"
+         <a target="_blank" rel="noopener noreferrer" href="https://souta.cc">
+           <object className="f_logo" data="https://weavatar.com/avatar/0188909a64b2b0ca9225afd0b743cb76?s=256"
                    type="image/png">
              <img className="f_logo" src="/sticker/rixiang.png"/>
            </object>
